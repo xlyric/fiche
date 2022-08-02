@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+
+
+
+
+    <div class="row"> 
+        <div class="col-md-3"> 
+
+
+{{ form_start(form) }}
+
+        {{ form_row(form.string) }}
+        <br>
+        {{ form_row(form.submit) }}
+        <br>
+        <span><b>Catégorie: </b><br></span>
+        {% for categorie in form.categories %}
+             {{ form_widget(categorie) }} {{ form_label(categorie) }}
+             <br>
+        {% endfor %}
+{{ form_end(form) }}        
+        </div>
+    
+        <div class="col-md-9"> 
+            <table class="table">
+                    <tr class="table-primary">
+
+                        <td><a href="/">{{ result }} Fiche(s) disponible(s)</a></td>
+
+                    </tr>
+                {% for categorie in categories %}
+                    <tr >
+                                <td><a href="{{categorie.url}}"  target=_blank > {{ categorie.titre }}</td>
+
+                    </tr>
+
+                {% endfor %}
+            </table>
+
+
+{% endblock %}

@@ -1,0 +1,84 @@
+{% extends 'base.html.twig' %}
+
+
+{% block content %} 
+
+
+    <div class="example-wrapper">
+        <h1>Fiches APPER</h1>
+    </div>
+
+    <div class="row"> 
+        <div class="col-md-3"> 
+            <h3> Filtre </h3>
+            {{ form(form) }}
+    </div>
+
+    <div class="col-md-9"> 
+            <table class="table">
+                    <tr class="table-primary">
+
+                        <td><a href="/"> {{ result }} Les fiches </a></td>
+
+                    </tr>
+                {% for categorie in categories %}
+                    <tr >
+                                <td>{{ categorie.titre }}</td>
+
+                    </tr>
+
+                {% endfor %}
+                          </table>
+                    
+    </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-8">
+<table class="table">
+    <tr class="table-primary">
+
+        <td><a href="/"> Les fiches </a></td>
+
+    </tr>
+
+            {% for article in articles %}
+    <tr >
+                <td><a href="{{article.url}}"  target=_blank >{{ article.titre }}</a></td>
+
+    </tr>
+		{% endfor %}
+</table>
+            </div>
+<div class="card text-black border-primary mb-2" style="max-width: 20rem;">
+  <div class="card-header">Mots clés</div>
+  <div class="card-body">
+    <h4 class="card-title" > Mots clés les plus courants : </h4>
+    <p class="card-text"><a href="/recherche/chauffe%20eau">Chauffe eau</a></p>
+    <p class="card-text"><a href="/recherche/Ballon">Ballon</a></p>
+    <p class="card-text"><a href="/recherche/Bois">Bois</a></p>
+    <p class="card-text"><a href="/recherche/capteur">capteur</a></p>
+    <p class="card-text"><a href="/recherche/drain back">drain back</a></p>
+    <p class="card-text"><a href="/recherche/capteur">capteur</a></p>
+    <p class="card-text"><a href="/recherche/CESI">CESI</a></p>
+    <p class="card-text"><a href="/recherche/circuit">circuit</a></p>
+    <p class="card-text"><a href="/recherche/ecs">ecs</a></p>
+    <p class="card-text"><a href="/recherche/Electricité">Electricité</a></p>
+    <p class="card-text"><a href="/recherche/façade">façade</a></p>
+    <p class="card-text"><a href="/recherche/four solaire">four solaire</a></p>
+    <p class="card-text"><a href="/recherche/isolation">isolation</a></p>
+    <p class="card-text"><a href="/recherche/Mur chauffant">Mur chauffant</a></p>
+    <p class="card-text"><a href="/recherche/Plancher chauffant">Plancher chauffant</a></p>
+    <p class="card-text"><a href="/recherche/Régulateur">Régulateur</a></p>
+    <p class="card-text"><a href="/recherche/Stock">Stock</a></p>
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+{% endblock %}
+
